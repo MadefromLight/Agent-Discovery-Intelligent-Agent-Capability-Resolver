@@ -1,0 +1,2 @@
+import test from "node:test";import assert from "node:assert/strict";import {resolve} from "../src/index.js";
+test("resolves by capability and protocol",()=>{const r=resolve({capability:"payments",protocol:"a2a",minTrust:50},[{id:"1",name:"Pay",capabilities:["payments"],protocols:["a2a"],trust:80}]);assert.equal(r[0]?.score,100);});
